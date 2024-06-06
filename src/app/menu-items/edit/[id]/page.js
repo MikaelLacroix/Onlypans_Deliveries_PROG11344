@@ -1,3 +1,4 @@
+//placepour pouvoir changer des données dans le menu
 'use client';
 import DeleteButton from "@/components/DeleteButton";
 import Left from "@/components/icons/Left";
@@ -27,6 +28,7 @@ export default function EditMenuItemPage() {
     })
   }, []);
 
+  //soumettre les modifications au menu
   async function handleFormSubmit(ev, data) {
     ev.preventDefault();
     data = {...data, _id:id};
@@ -44,13 +46,14 @@ export default function EditMenuItemPage() {
 
     await toast.promise(savingPromise, {
       loading: 'Saving this tasty item',
-      success: 'Saved',
+      success: 'OnlyPans is happy to make new Recipes!',
       error: 'Error',
     });
 
     setRedirectToItems(true);
   }
 
+  //fonction pour enlever des items du menu
   async function handleDeleteClick() {
     const promise = new Promise(async (resolve, reject) => {
       const res = await fetch('/api/menu-items?_id='+id, {
@@ -62,9 +65,10 @@ export default function EditMenuItemPage() {
         reject();
     });
 
+    //congradulations, you have succeeded in making Onlypans sad... shame on you
     await toast.promise(promise, {
       loading: 'Deleting...',
-      success: 'Deleted',
+      success: 'food go bye bye, This makes OnlyPans sad',
       error: 'Error',
     });
 
@@ -89,7 +93,7 @@ export default function EditMenuItemPage() {
       <div className="max-w-2xl mx-auto mt-8">
         <Link href={'/menu-items'} className="button">
           <Left />
-          <span>Show all menu items</span>
+          <span>Show all OnlyPans menu items</span>
         </Link>
       </div>
       <MenuItemForm menuItem={menuItem} onSubmit={handleFormSubmit} />
