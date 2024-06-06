@@ -1,3 +1,4 @@
+//id de l'utilisateur est géré avec cette page et l'état de la commande est aussi géré ici
 'use client';
 import {CartContext, cartProductPrice} from "@/components/AppContext";
 import AddressInputs from "@/components/layout/AddressInputs";
@@ -6,6 +7,7 @@ import CartProduct from "@/components/menu/CartProduct";
 import {useParams} from "next/navigation";
 import {useContext, useEffect, useState} from "react";
 
+//prendre l'état du cart de l'utilisateur et déterminer si il a été payé, pas payé, annulé ou vide
 export default function OrderPage() {
   const {clearCart} = useContext(CartContext);
   const [order, setOrder] = useState();
@@ -28,6 +30,7 @@ export default function OrderPage() {
     }
   }, []);
 
+  //prix pour la commande est démontré ici
   let subtotal = 0;
   if (order?.cartProducts) {
     for (const product of order?.cartProducts) {
@@ -35,17 +38,18 @@ export default function OrderPage() {
     }
   }
 
+  //confirmation de la commande et total de la commande avec les prix
   return (
     <section className="max-w-2xl mx-auto mt-8">
       <div className="text-center">
         <SectionHeaders mainHeader="Your order" />
         <div className="mt-4 mb-8">
-          <p>Thanks for your order.</p>
-          <p>We will call you when your order will be on the way.</p>
+          <p>OnlyPans thanks you for your order.</p>
+          <p>We will contact you when your order is about to be interted into your residence.</p>
         </div>
       </div>
       {loadingOrder && (
-        <div>Loading order...</div>
+        <div>Loading OnlyPans order...</div>
       )}
       {order && (
         <div className="grid md:grid-cols-2 md:gap-16">

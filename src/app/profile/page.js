@@ -1,3 +1,4 @@
+//user profile page, change and add data for the user
 'use client';
 import EditableImage from "@/components/layout/EditableImage";
 import InfoBox from "@/components/layout/InfoBox";
@@ -11,6 +12,7 @@ import {redirect} from "next/navigation";
 import {useEffect, useState} from "react";
 import toast from "react-hot-toast";
 
+//appeler l'usager et montrer les données qui sont connues
 export default function ProfilePage() {
   const session = useSession();
 
@@ -19,6 +21,7 @@ export default function ProfilePage() {
   const [profileFetched, setProfileFetched] = useState(false);
   const {status} = session;
 
+  //montrer les données si l'utilisateur est authentifié avec l'aide du API
   useEffect(() => {
     if (status === 'authenticated') {
       fetch('/api/profile').then(response => {
@@ -31,6 +34,7 @@ export default function ProfilePage() {
     }
   }, [session, status]);
 
+  //changement de données de l'utilisateur
   async function handleProfileInfoUpdate(ev, data) {
     ev.preventDefault();
 

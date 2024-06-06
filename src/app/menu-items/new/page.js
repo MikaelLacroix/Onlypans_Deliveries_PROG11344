@@ -1,3 +1,4 @@
+//ajouter des items au menu (Make OnlyPans Proud Again)
 'use client';
 import Left from "@/components/icons/Left";
 import Right from "@/components/icons/Right";
@@ -10,6 +11,7 @@ import {redirect} from "next/navigation";
 import {useState} from "react";
 import toast from "react-hot-toast";
 
+//ajouter des items avec cette fonction
 export default function NewMenuItemPage() {
 
   const [redirectToItems, setRedirectToItems] = useState(false);
@@ -31,7 +33,7 @@ export default function NewMenuItemPage() {
 
     await toast.promise(savingPromise, {
       loading: 'Saving this tasty item',
-      success: 'Saved',
+      success: 'good job, now OnlyPans is proud of you',
       error: 'Error',
     });
 

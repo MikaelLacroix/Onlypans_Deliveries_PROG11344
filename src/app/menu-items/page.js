@@ -1,3 +1,4 @@
+//ajouter ou modifier des items du menu
 'use client';
 import Right from "@/components/icons/Right";
 import UserTabs from "@/components/layout/UserTabs";
@@ -27,6 +28,7 @@ export default function MenuItemsPage() {
     return 'Not an admin.';
   }
 
+  //seulement l'admin peut faire des changements
   return (
     <section className="mt-8 max-w-2xl mx-auto">
       <UserTabs isAdmin={true} />
@@ -34,12 +36,12 @@ export default function MenuItemsPage() {
         <Link
           className="button flex"
           href={'/menu-items/new'}>
-          <span>Crete new menu item</span>
+          <span>Create new menu item (Make OnlyPans Proud Again)</span>
           <Right />
         </Link>
       </div>
       <div>
-        <h2 className="text-sm text-gray-500 mt-8">Edit menu item:</h2>
+        <h2 className="text-sm text-gray-500 mt-8">Edit menu item: (Did you screw up?)</h2>
         <div className="grid grid-cols-3 gap-2">
           {menuItems?.length > 0 && menuItems.map(item => (
             <Link
