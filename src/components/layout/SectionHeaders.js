@@ -1,3 +1,4 @@
+//headers pour la section appelée
 export default function SectionHeaders({subHeader,mainHeader}) {
   return (
     <>

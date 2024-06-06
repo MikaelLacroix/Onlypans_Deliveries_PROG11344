@@ -1,3 +1,4 @@
+//démontre affichage pour mener au changement des profiles, des items de menu, des utilisateurs et des commandes
 'use client';
 import Link from "next/link";
 import {usePathname} from "next/navigation";
