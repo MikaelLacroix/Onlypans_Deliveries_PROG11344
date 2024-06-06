@@ -1,3 +1,4 @@
+// Importer tout ce qu'on a besoin pour pouvoir connecter notre site web avec MongoDB et google
 import clientPromise from "@/libs/mongoConnect";
 import {UserInfo} from "@/models/UserInfo";
 import bcrypt from "bcrypt";
@@ -8,6 +9,7 @@ import CredentialsProvider from "next-auth/providers/credentials";
 import GoogleProvider from "next-auth/providers/google";
 import { MongoDBAdapter } from "@auth/mongodb-adapter"
 
+// options pour authentifier les connexions
 export const authOptions = {
   secret: process.env.SECRET,
   adapter: MongoDBAdapter(clientPromise),
@@ -41,6 +43,7 @@ export const authOptions = {
   ],
 };
 
+//si l'administrateur du site web entre dans le site, il aura des options différentes que les autres
 export async function isAdmin() {
   const session = await getServerSession(authOptions);
   const userEmail = session?.user?.email;
@@ -54,6 +57,9 @@ export async function isAdmin() {
   return userInfo.admin;
 }
 
+//variable qui va être utilisée pour envoyer à MongoDB
 const handler = NextAuth(authOptions);
+
+//envoyer les données au api de MongoDB
 
 export { handler as GET, handler as POST }
