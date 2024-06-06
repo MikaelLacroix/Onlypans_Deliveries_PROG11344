@@ -1,3 +1,4 @@
+//données de l'utilisateur (admin side)
 import {model, models, Schema} from "mongoose";
 
 const UserSchema = new Schema({

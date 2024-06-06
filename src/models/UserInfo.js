@@ -1,3 +1,4 @@
+//plus de données sur l'utilisateur, user side
 import {model, models, Schema} from "mongoose";
 
 const UserInfoSchema = new Schema({
