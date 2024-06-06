@@ -1,3 +1,4 @@
+//les fonctione sont appelées pour laisser les admins de ramasser les commandes qui ont été faites pour pouvoir les compléter et pour pouvoir voir les commandes par utilisateur, ou par email, ces fonctions laissent aussi les utilisateurs voir leur commandes
 import {authOptions, isAdmin} from "@/app/api/auth/[...nextauth]/route";
 import {Order} from "@/models/Order";
 import mongoose from "mongoose";
