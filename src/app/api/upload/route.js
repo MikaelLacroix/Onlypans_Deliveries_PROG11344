@@ -11,8 +11,8 @@ export async function POST(req) {
     const s3Client = new S3Client({
       region: 'ca-east-1',
       credentials: {
-        accessKeyId: AKIAYS2NUNTCTGI2QGE6,
-        secretAccessKey: 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,
+        accessKeyId: process.env.AWS_ACCESS_KEY,
+        secretAccessKey: process.env.AWS_SECRET_KEY,
       },
     });
 
@@ -25,7 +25,7 @@ export async function POST(req) {
     }
     const buffer = Buffer.concat(chunks);
 
-    const bucket = 'Only-Pans-AWS';
+    const bucket = 'onlypans-deliveries';
     await s3Client.send(new PutObjectCommand({
       Bucket: bucket,
       Key: newFileName,
