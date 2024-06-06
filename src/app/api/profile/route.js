@@ -1,9 +1,11 @@
+//fonction pour personaliser le profile
 import {authOptions} from "@/app/api/auth/[...nextauth]/route";
 import {User} from "@/models/User";
 import {UserInfo} from "@/models/UserInfo";
 import mongoose from "mongoose";
 import {getServerSession} from "next-auth";
 
+//s'assurer que l'utilisateur est bon et montrer ce qui est disponible sur l'utilisateur
 export async function PUT(req) {
   mongoose.connect(process.env.MONGO_URL);
   const data = await req.json();
@@ -24,7 +26,7 @@ export async function PUT(req) {
 
   return Response.json(true);
 }
-
+//ramasser les données de l'utilisateur
 export async function GET(req) {
   mongoose.connect(process.env.MONGO_URL);
 
