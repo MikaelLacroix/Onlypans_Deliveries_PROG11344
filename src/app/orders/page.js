@@ -1,3 +1,4 @@
+//page de commande
 'use client';
 import SectionHeaders from "@/components/layout/SectionHeaders";
 import UserTabs from "@/components/layout/UserTabs";
@@ -15,6 +16,7 @@ export default function OrdersPage() {
     fetchOrders();
   }, []);
 
+//fonction qui va ramasser les commandes
   function fetchOrders() {
     setLoadingOrders(true);
     fetch('/api/orders').then(res => {
@@ -25,12 +27,13 @@ export default function OrdersPage() {
     })
   }
 
+  //montrer le temps, de ka commande, le username, l'état de paiement etc..
   return (
     <section className="mt-8 max-w-2xl mx-auto">
       <UserTabs isAdmin={profile.admin} />
       <div className="mt-8">
         {loadingOrders && (
-          <div>Loading orders...</div>
+          <div>Loading OnlyPans orders...</div>
         )}
         {orders?.length > 0 && orders.map(order => (
           <div
@@ -57,7 +60,7 @@ export default function OrdersPage() {
             </div>
             <div className="justify-end flex gap-2 items-center whitespace-nowrap">
               <Link href={"/orders/"+order._id} className="button">
-                Show order
+                Show my OnlyPans order
               </Link>
             </div>
           </div>
