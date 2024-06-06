@@ -1,3 +1,4 @@
+//header text and formatting
 'use client';
 import {CartContext} from "@/components/AppContext";
 import Bars2 from "@/components/icons/Bars2";
