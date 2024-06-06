@@ -1,3 +1,4 @@
+//faire que l'utilisateur peut cliquer sur l'item pour l'ajouter dans le cart
 import AddToCartButton from "@/components/menu/AddToCartButton";
 
 export default function MenuItemTile({onAddToCart, ...item}) {
