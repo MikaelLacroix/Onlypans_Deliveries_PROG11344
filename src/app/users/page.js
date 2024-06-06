@@ -1,9 +1,11 @@
+//changements avec les utilisateurs
 'use client';
 import UserTabs from "@/components/layout/UserTabs";
 import {useProfile} from "@/components/UseProfile";
 import Link from "next/link";
 import {useEffect, useState} from "react";
 
+//montrer les informations de l'utilisateur en cours
 export default function UsersPage() {
 
   const [users, setUsers] = useState([]);
