@@ -1,3 +1,4 @@
+//page d'utilisateur
 'use client';
 import UserForm from "@/components/layout/UserForm";
 import UserTabs from "@/components/layout/UserTabs";
@@ -6,6 +7,7 @@ import {useParams} from "next/navigation";
 import {useEffect, useState} from "react";
 import toast from "react-hot-toast";
 
+//changements des données
 export default function EditUserPage() {
   const {loading, data} = useProfile();
   const [user, setUser] = useState(null);
@@ -19,6 +21,7 @@ export default function EditUserPage() {
     })
   }, []);
 
+  //ce qui arrive quand le boutton de save est pesé
   async function handleSaveButtonClick(ev, data) {
     ev.preventDefault();
     const promise = new Promise(async (resolve, reject) => {
@@ -45,7 +48,7 @@ export default function EditUserPage() {
   }
 
   if (!data.admin) {
-    return 'Not an admin';
+    return 'Not an admin, get a life';
   }
 
   return (
