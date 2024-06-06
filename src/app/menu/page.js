@@ -1,3 +1,4 @@
+//setter les items du menu sur la page web avec le texte et l'image et s'assurer que le texte est centré
 'use client';
 import SectionHeaders from "@/components/layout/SectionHeaders";
 import MenuItem from "@/components/menu/MenuItem";

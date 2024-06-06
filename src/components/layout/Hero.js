@@ -14,7 +14,7 @@ export default function Hero() {
           </span>
         </h1>
         <p className="my-6 text-gray-500 text-sm">
-          Onlypans is making cooking and delivering sexy 
+          Onlypans is making and cooking and delivering sexy 
         </p>
         <div className="flex gap-4 text-sm">
           <button className="flex justify-center bg-primary uppercase flex items-center gap-2 text-white px-4 py-2 rounded-full">
