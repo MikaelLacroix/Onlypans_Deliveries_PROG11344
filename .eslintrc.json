@@ -1,3 +1,4 @@
+// next app essential code
 {
   "extends": "next/core-web-vitals"
 }
