@@ -1,3 +1,4 @@
+//catégories de nourriture
 'use client';
 import DeleteButton from "@/components/DeleteButton";
 import UserTabs from "@/components/layout/UserTabs";
@@ -5,6 +6,7 @@ import {useEffect, useState} from "react";
 import {useProfile} from "@/components/UseProfile";
 import toast from "react-hot-toast";
 
+//montrer les catégories qui sont disponibles pour la sélection avec l'aide de MongoDB, laisse changer les catégories, et les enlever
 export default function CategoriesPage() {
 
   const [categoryName, setCategoryName] = useState('');
