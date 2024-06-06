@@ -1,7 +1,9 @@
+//ajouter un nouvel utilisateur, mot de passe encrypté
 import {User} from "@/models/User";
 import bcrypt from "bcrypt";
 import mongoose from "mongoose";
 
+//fonction pour gérer le mot de passe de l'utilisateur et s'assurer que l'utilisateur a un mot de passe valide qui est plus long que 5 caractères, il va ensuite faire un hash avec salt du mot de passe
 export async function POST(req) {
   const body = await req.json();
   mongoose.connect(process.env.MONGO_URL);

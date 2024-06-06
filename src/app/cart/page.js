@@ -1,3 +1,4 @@
+//lien à la database en utilisant les données de l'utilisateur, son cart et son paiement
 'use client';
 import {CartContext, cartProductPrice} from "@/components/AppContext";
 import Trash from "@/components/icons/Trash";
@@ -9,6 +10,7 @@ import Image from "next/image";
 import {useContext, useEffect, useState} from "react";
 import toast from "react-hot-toast";
 
+//fonction pour voir si le cart est bon ou non
 export default function CartPage() {
   const {cartProducts,removeCartProduct} = useContext(CartContext);
   const [address, setAddress] = useState({});
@@ -22,6 +24,7 @@ export default function CartPage() {
     }
   }, []);
 
+  //fonction pour l'adresse des utilisateurs et l'utiliser pour le cart
   useEffect(() => {
     if (profileData?.city) {
       const {phone, streetAddress, city, postalCode, country} = profileData;
@@ -36,6 +39,7 @@ export default function CartPage() {
     }
   }, [profileData]);
 
+  //affichage du prix total en utilisant les items du menu
   let subtotal = 0;
   for (const p of cartProducts) {
     subtotal += cartProductPrice(p);
@@ -65,6 +69,7 @@ export default function CartPage() {
       });
     });
 
+    //fonction qui montre le statut de la commande
     await toast.promise(promise, {
       loading: 'Preparing your order...',
       success: 'Redirecting to payment...',
@@ -72,11 +77,12 @@ export default function CartPage() {
     })
   }
 
+  //vérifier si il y a des items dans le cart
   if (cartProducts?.length === 0) {
     return (
       <section className="mt-8 text-center">
         <SectionHeaders mainHeader="Cart" />
-        <p className="mt-4">Your shopping cart is empty 😔</p>
+        <p className="mt-4">Meal Tray is empty, you are making OnlyPans Sad</p>
       </section>
     );
   }
@@ -89,7 +95,7 @@ export default function CartPage() {
       <div className="mt-8 grid gap-8 grid-cols-2">
         <div>
           {cartProducts?.length === 0 && (
-            <div>No products in your shopping cart</div>
+            <div>you got no food, are you not hungry? you will make OnlyPans Sad if you don't eat his food</div>
           )}
           {cartProducts?.length > 0 && cartProducts.map((product, index) => (
             <CartProduct

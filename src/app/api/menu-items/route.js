@@ -1,7 +1,9 @@
+//connecter Mongose avec le fichier json et importer le menu de notre restaurant
 import {isAdmin} from "@/app/api/auth/[...nextauth]/route";
 import {MenuItem} from "@/models/MenuItem";
 import mongoose from "mongoose";
 
+//option pour ajouter des items sur le menu pour l'administrateur
 export async function POST(req) {
   mongoose.connect(process.env.MONGO_URL);
   const data = await req.json();
@@ -13,6 +15,7 @@ export async function POST(req) {
   }
 }
 
+//menu et trouver les items
 export async function PUT(req) {
   mongoose.connect(process.env.MONGO_URL);
   if (await isAdmin()) {
@@ -22,6 +25,7 @@ export async function PUT(req) {
   return Response.json(true);
 }
 
+//trouver des items du menu
 export async function GET() {
   mongoose.connect(process.env.MONGO_URL);
   return Response.json(
@@ -29,6 +33,7 @@ export async function GET() {
   );
 }
 
+//enlever des items du menu
 export async function DELETE(req) {
   mongoose.connect(process.env.MONGO_URL);
   const url = new URL(req.url);
