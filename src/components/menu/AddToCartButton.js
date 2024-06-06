@@ -1,3 +1,4 @@
+//bouton pour le cart
 import FlyingButton from 'react-flying-item'
 
 export default function AddToCartButton({

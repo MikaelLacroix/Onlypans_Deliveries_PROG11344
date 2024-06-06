@@ -1,3 +1,4 @@
+//Slogan and formatting for slogan
 import Right from "@/components/icons/Right";
 import Image from "next/image";
 

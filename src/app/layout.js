@@ -1,3 +1,4 @@
+//création de l'application avec l'aide de Next
 import {AppProvider} from "@/components/AppContext";
 import Header from "@/components/layout/Header";
 import { Roboto } from 'next/font/google'

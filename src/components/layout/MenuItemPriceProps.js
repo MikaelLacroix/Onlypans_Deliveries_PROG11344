@@ -1,3 +1,4 @@
+//prix des items
 import ChevronDown from "@/components/icons/ChevronDown";
 import ChevronUp from "@/components/icons/ChevronUp";
 import Plus from "@/components/icons/Plus";

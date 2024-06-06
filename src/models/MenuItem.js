@@ -1,3 +1,4 @@
+//items du menu qui sont montrées
 import mongoose, {model, models, Schema} from "mongoose";
 
 const ExtraPriceSchema = new Schema({

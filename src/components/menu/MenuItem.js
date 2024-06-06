@@ -1,3 +1,4 @@
+//items du menu qui peuvent être sélectionnés pour l'utilisateur et des boutons et des fonctions pour ajouter ces items au cart
 import {CartContext} from "@/components/AppContext";
 import MenuItemTile from "@/components/menu/MenuItemTile";
 import Image from "next/image";

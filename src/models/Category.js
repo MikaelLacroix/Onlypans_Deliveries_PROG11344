@@ -1,3 +1,4 @@
+//categories montrées
 import {model, models, Schema} from "mongoose";
 
 const CategorySchema = new Schema({

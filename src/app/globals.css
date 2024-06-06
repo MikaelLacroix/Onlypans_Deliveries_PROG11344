@@ -1,3 +1,4 @@
+/* ramasser des composantes de tailwind pour faire le css */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -7,6 +8,7 @@ section.hero{
     grid-template-columns: .4fr .6fr;
 }
 
+/* style pour les choses sélectionnées aient un border et un block */
 select,
 input[type="email"],
 input[type="password"],
@@ -15,25 +17,30 @@ input[type="text"] {
     @apply block w-full mb-2 rounded-xl;
     @apply border p-2 border-gray-300 bg-gray-100;
 }
+/* faire que cette sélection est grise si elle n'Est pas permise pour l'instant */
 input[type="email"]:disabled,
 input[type="password"]:disabled,
 input[type="tel"]:disabled,
 input[type="text"]:disabled {
     @apply bg-gray-300 border-0 cursor-not-allowed text-gray-500;
 }
+/* label gris */
 label{
     @apply text-gray-500 text-sm leading-tight;
 }
 label + input{
     margin-top: -2px;
 }
+/* grosseur du bouton et emplacement du texte */
 button, .button{
     @apply flex w-full justify-center gap-2 text-gray-700 font-semibold;
     @apply border border-gray-300 rounded-xl px-6 py-2;
 }
+/* effet du bouton de submit */
 button[type="submit"], .submit, button.primary{
     @apply border-primary bg-primary text-white;
 }
+/* effet si la soumission n'est pas permise */
 button[type="submit"]:disabled, .submit:disabled{
     @apply cursor-not-allowed bg-red-400;
 }

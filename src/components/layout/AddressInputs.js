@@ -1,3 +1,4 @@
+//form qui vient demander les données de l'utilisateur
 export default function AddressInputs({addressProps,setAddressProp,disabled=false}) {
   const {phone, streetAddress, postalCode, city, country} = addressProps;
   return (

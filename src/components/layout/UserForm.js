@@ -1,3 +1,4 @@
+// form qui va laisser une personne faire un nouvel utilisateur
 'use client';
 import AddressInputs from "@/components/layout/AddressInputs";
 import EditableImage from "@/components/layout/EditableImage";
@@ -23,6 +24,7 @@ export default function UserForm({user,onSave}) {
     if (propName === 'country') setCountry(value);
   }
 
+  //form en html
   return (
     <div className="md:flex gap-4">
       <div>
@@ -65,7 +67,7 @@ export default function UserForm({user,onSave}) {
                 checked={admin}
                 onChange={ev => setAdmin(ev.target.checked)}
               />
-              <span>Admin</span>
+              <span>OnlyPans Admin</span>
             </label>
           </div>
         )}
