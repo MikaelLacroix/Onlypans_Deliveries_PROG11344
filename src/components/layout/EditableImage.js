@@ -1,4 +1,3 @@
-//upload des images dans le form pour ajouter des items dans le menu
 import Image from "next/image";
 import toast from "react-hot-toast";
 
@@ -19,7 +18,7 @@ export default function EditableImage({link, setLink}) {
             setLink(link);
           })
         }
-
+        throw new Error('Something went wrong');
       });
 
       await toast.promise(uploadPromise, {

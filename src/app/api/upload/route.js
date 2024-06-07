@@ -1,4 +1,3 @@
-//on a décidé de pas utiliser cette fonctionalité, ignorer cette partie
 import {PutObjectCommand, S3Client} from "@aws-sdk/client-s3";
 import uniqid from 'uniqid';
 
@@ -9,7 +8,7 @@ export async function POST(req) {
     const file = data.get('file');
 
     const s3Client = new S3Client({
-      region: 'ca-east-1',
+      region: 'us-east-1',
       credentials: {
         accessKeyId: process.env.AWS_ACCESS_KEY,
         secretAccessKey: process.env.AWS_SECRET_KEY,

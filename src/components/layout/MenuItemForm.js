@@ -1,4 +1,3 @@
-//ajouter un nouvel item au menu
 import Plus from "@/components/icons/Plus";
 import Trash from "@/components/icons/Trash";
 import EditableImage from "@/components/layout/EditableImage";
@@ -25,7 +24,7 @@ export default function MenuItemForm({onSubmit,menuItem}) {
       });
     });
   }, []);
-//formulaire html qui ramasse les données entrées
+
   return (
     <form
       onSubmit={ev =>
