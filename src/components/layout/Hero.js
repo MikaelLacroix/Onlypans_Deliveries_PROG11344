@@ -17,16 +17,6 @@ export default function Hero() {
         <p className="my-6 text-gray-500 text-sm">
           Onlypans is making cooking and delivering sexy 
         </p>
-        <div className="flex gap-4 text-sm">
-          <button className="flex justify-center bg-primary uppercase flex items-center gap-2 text-white px-4 py-2 rounded-full">
-            Order now
-            <Right />
-          </button>
-          <button className="flex items-center border-0 gap-2 py-2 text-gray-600 font-semibold">
-            Learn more
-            <Right />
-          </button>
-        </div>
       </div>
       <div className="relative hidden md:block">
         <Image src={'/onlypanslogo.png'} layout={'fill'} objectFit={'contain'} alt={'pizza'} />
