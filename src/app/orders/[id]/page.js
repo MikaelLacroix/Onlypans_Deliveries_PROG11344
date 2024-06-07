@@ -45,7 +45,7 @@ export default function OrderPage() {
         <SectionHeaders mainHeader="Your order" />
         <div className="mt-4 mb-8">
           <p>OnlyPans thanks you for your order.</p>
-          <p>We will contact you when your order is about to be interted into your residence.</p>
+          <p>We will contact you when your order is about to be inserted into your residence.</p>
         </div>
       </div>
       {loadingOrder && (
